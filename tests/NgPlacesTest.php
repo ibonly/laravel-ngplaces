@@ -1,17 +1,38 @@
 <?php
+
 namespace Ibonly\NgPlaces\Test;
 
-use Mockery as m;
-use GuzzleHttp\Client;
 use Ibonly\NgPlaces\NgPlaces;
 use PHPUnit_Framework_TestCase;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Facade as Facade;
 
 class NgPlacesTest extends PHPUnit_Framework_TestCase
 {
-	public function testTrueIsTrue()
+	protected $facade;
+	protected $ngplaces;
+
+    public function setUp()
     {
-        $this->assertTrue(true);
+        $this->ngplaces = new NgPlaces();
     }
+
+    public function testGetAllStates()
+    {
+        $this->assertInternalType('array', $this->ngplaces->getAllStates());
+    }
+
+    public function testGetStateIsArray()
+    {
+    	$this->assertInternalType('array', $this->ngplaces->getState('OG'));
+    }
+
+    public function testActualState()
+    {
+    	$this->assertEquals('Ogun', $this->ngplaces->getState('OG')[0]['state_name']);
+    }
+
+    public function testGetStateLgas()
+    {
+    	$this->assertInternalType('array', $this->ngplaces->getStateLga('AB'));
+    }
+
 }

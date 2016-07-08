@@ -1,4 +1,5 @@
 <?php
+
 namespace Ibonly\NgPlaces;
 
 use Illuminate\Support\ServiceProvider;
