@@ -7,7 +7,6 @@ use PHPUnit_Framework_TestCase;
 
 class NgPlacesTest extends PHPUnit_Framework_TestCase
 {
-	protected $facade;
 	protected $ngplaces;
 
     public function setUp()
@@ -46,5 +45,4 @@ class NgPlacesTest extends PHPUnit_Framework_TestCase
     {
     	$this->assertInternalType('array', $this->ngplaces->getStateLga('AB'));
     }
-
 }
