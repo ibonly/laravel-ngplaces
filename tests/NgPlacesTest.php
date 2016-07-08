@@ -15,21 +15,33 @@ class NgPlacesTest extends PHPUnit_Framework_TestCase
         $this->ngplaces = new NgPlaces();
     }
 
+    /**
+     * Test to check the data type of the states from the api
+     */
     public function testGetAllStates()
     {
         $this->assertInternalType('array', $this->ngplaces->getAllStates());
     }
 
+    /*
+     * Test to check the return type of a paticular state
+     */
     public function testGetStateIsArray()
     {
     	$this->assertInternalType('array', $this->ngplaces->getState('OG'));
     }
 
+    /**
+     * Test to confirm the returned state from the api
+     */
     public function testActualState()
     {
     	$this->assertEquals('Ogun', $this->ngplaces->getState('OG')[0]['state_name']);
     }
 
+    /**
+     * Test to get all the local government of a state from the api
+     */
     public function testGetStateLgas()
     {
     	$this->assertInternalType('array', $this->ngplaces->getStateLga('AB'));
