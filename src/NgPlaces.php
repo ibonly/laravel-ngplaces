@@ -27,16 +27,21 @@ class NgPlaces
 		return $this->api('/states');
 	}
 
-	public function getState($state_name)
+	public function getState($stateName)
 	{
-		return $this->api('/state/'.$state_name);
+		return $this->api('/state/'.$stateName);
 	}
 
-	public function getStateLga($state_name)
+	public function getStateLga($stateName)
 	{
-		return $this->api('/state/'.$state_name.'/lgas');
+		return $this->api('/state/'.$stateName.'/lgas');
 	}
 
+	/**
+	 * [api description]
+	 * @param  [type] $url [description]
+	 * @return [type]      [description]
+	 */
 	public function api($url)
 	{
 		$this->setResponse($url);

@@ -1,0 +1,19 @@
+language: php
+
+php:
+  - 5.5.9
+  - 5.5
+  - 5.6
+  - 7.0
+  - hhvm
+
+matrix:
+    allow_failures:
+        - php: 7.0
+        - php: hhvm
+
+install: travis_retry composer install --no-interaction --prefer-source
+
+script: vendor/bin/phpunit
+
+after_script: CODECLIMATE_REPO_TOKEN=98a8e0fd0fd9c72eb936eeafb65a8d7be40e96adc0c662e77ba19c011a38623f ./vendor/bin/test-reporter

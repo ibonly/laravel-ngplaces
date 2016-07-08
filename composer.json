@@ -1,7 +1,7 @@
 {
     "name": "ibonly/laravel-ngplaces",
     "description": "A laravel app that is built on ng-places api, it provides places in Nigeria like state, lga, city, bank, market etc",
-     "keywords": ["php","github", "laravel","Open Source","states", "cities", "ng-places", "ngplaces", "nigeria", "ibonly", "laravel-ngplaces", "verem"],
+     "keywords": ["php","github", "laravel", "nigeria", "Open Source", "states", "cities", "ng-places", "ngplaces", "nigeria", "ibonly", "laravel-ngplaces", "verem"],
     "license": "MIT",
    	"minimum-stability": "stable",
     "authors": [
@@ -29,6 +29,7 @@
     },
    	"require-dev": {
         "phpunit/phpunit" : "4.*",
-        "scrutinizer/ocular": "~1.1"
+        "scrutinizer/ocular": "~1.1",
+        "codeclimate/php-test-reporter": "dev-master"
     }
 }
