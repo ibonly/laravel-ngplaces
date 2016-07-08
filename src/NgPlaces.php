@@ -37,6 +37,11 @@ class NgPlaces
 		return $this->api('/state/'.$state_name.'/lgas');
 	}
 
+	/**
+	 * [api description]
+	 * @param  [type] $url [description]
+	 * @return [type]      [description]
+	 */
 	public function api($url)
 	{
 		$this->setResponse($url);
