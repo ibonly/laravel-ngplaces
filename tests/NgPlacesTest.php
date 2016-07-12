@@ -25,9 +25,9 @@ class NgPlacesTest extends PHPUnit_Framework_TestCase
     /*
      * Test to check the return type of a paticular state
      */
-    public function testGetStateIsArray()
+    public function testGetStateIsObject()
     {
-    	$this->assertInternalType('array', $this->ngplaces->getState('OG'));
+    	$this->assertInternalType('object', $this->ngplaces->getState('OG'));
     }
 
     /**
@@ -35,7 +35,7 @@ class NgPlacesTest extends PHPUnit_Framework_TestCase
      */
     public function testActualState()
     {
-    	$this->assertEquals('Ogun', $this->ngplaces->getState('OG')[0]['state_name']);
+    	$this->assertEquals('Ogun', $this->ngplaces->getState('OG')->state_name);
     }
 
     /**

@@ -86,14 +86,6 @@ class NgPlaces
      */
     private function data()
     {
-        $result = json_decode($this->response->getBody());
-        $simplifiedResult = [];
-        if (is_array($result)) {
-            foreach ($result as $key => $value) {
-                $simplifiedResult[$key] = (array)$value;
-            }
-            return $simplifiedResult;
-        }
-        return (array)$result;
+        return json_decode($this->response->getBody());
     }
 }
