@@ -67,6 +67,48 @@ class NgPlaces
 	}
 
 	/**
+	 * Get list of all banks
+	 * 
+	 * @return object
+	 */
+	public function getAllBanks()
+	{
+		return $this->api('/banks');
+	}
+
+	/**
+	 * Get a particular bank
+	 * 
+	 * @param  $bankId
+	 * @return object
+	 */
+	public function getBank($bankId)
+	{
+		return $this->api('/bank/'.$bankId);
+	}
+
+	/**
+	 * Get list of all banks
+	 * 
+	 * @return object
+	 */
+	public function getAllInstitutions()
+	{
+		return $this->api('/institutions');
+	}
+
+	/**
+	 * Get a particular Institution
+	 * 
+	 * @param  $instituteId
+	 * @return object
+	 */
+	public function getInstitution($instituteId)
+	{
+		return $this->api('/institution/'.$instituteId);
+	}
+
+	/**
 	 * Setup response data
 	 * 
 	 * @param  $url Query string

@@ -45,4 +45,38 @@ class NgPlacesTest extends PHPUnit_Framework_TestCase
     {
     	$this->assertInternalType('array', $this->ngplaces->getStateLga('AB'));
     }
+
+    /**
+     * Test to check the data type of the banks from the api
+     */
+    public function testGetAllBanks()
+    {
+        $this->assertInternalType('array', $this->ngplaces->getAllBanks());
+    }
+
+    /**
+     * Test to confirm the returned bank from the api
+     */
+    public function testActualBank()
+    {
+        $this->assertEquals('Access Bank Plc', $this->ngplaces->getBank(1)->name);
+    }
+
+    /**
+     * Test to check the data type of the institutions from the api
+     */
+    public function testGetAllInstitutions()
+    {
+        $this->assertInternalType('array', $this->ngplaces->getAllInstitutions());
+    }
+
+    /**
+     * Test to confirm the returned bank from the api
+     */
+    public function testActualInstitution()
+    {
+        $this->assertEquals('Abdul Gusau Polytechnic', $this->ngplaces->getInstitution(1)->name);
+    }
+
+
 }
